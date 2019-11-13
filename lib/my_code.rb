@@ -19,16 +19,16 @@ end
 
 def reduce(input, init = nil)
   if init
-    n = init
+    output = init
     i = 0
   else
-    n = input[0]
+    output = input[0]
     i = 1
   end
   while i < input.length
-    n = yield(n, input[i])
+    output = yield(output, input[i])
     i += 1
   end
-  n
+  output
 end
 
